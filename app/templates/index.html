@@ -13,6 +13,7 @@
 
     <div>
         <h2>Todo List</h2>
+        {% if todos %}
             <table class="table">
                 <thead>
                     <tr>
@@ -33,10 +34,19 @@
                                 {% endif %}
                             </td>
                             <td>{{ todo.time }}</td>
+                            {% if todo.status == 1 %}
+                                <td><a href="/undone/{{ todo.id }}" class="btn btn-primary">Undone</a></td>
+                            {% else %}
+                                <td><a href="/done/{{ todo.id }}" class="btn btn-success">Done</a></td>
+                            {% endif %}
+                            <td><a href="/delete/{{ todo.id }}" class="btn btn-danger">Delete</a></td>
                         </tr>
                     {%  endfor %}
                 </tbody>
             </table>
+        {% else %}
+            <h3 class="text-info">没有用户,请添加</h3>
+        {% endif %}
     </div>
 
 {% endblock %}
