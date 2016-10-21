@@ -1,1 +1,2 @@
+SECRET_KEY = "Leo"
 MONGODB_SETTINGS = {'DB': 'todo'}
