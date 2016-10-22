@@ -1,2 +1,4 @@
 SECRET_KEY = "Leo"
 MONGODB_SETTINGS = {'DB': 'todo'}
+
+WTF_CSRF_ENABLED = False
